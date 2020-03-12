@@ -40,7 +40,7 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
-newPlayer = Player(room['outside'])
+newPlayer = Player(input("Please enter your name"), room['outside'])
 
 # Write a loop that:
 #
@@ -71,12 +71,12 @@ while True:
     if cmd == "q":
         break
     elif cmd == "n":
-        newPlayer.location = newPlayer.location.n_to
+        newPlayer.current_room = newPlayer.current_room.n_to
     elif cmd == "s":
-        newPlayer.location = newPlayer.location.s_to
+        newPlayer.current_room = newPlayer.current_room.s_to
     elif cmd == "w":
-        newPlayer.location = newPlayer.location.w_to
+        newPlayer.current_room = newPlayer.current_room.w_to
     elif cmd == "e":
-        newPlayer.location = newPlayer.location.e_to
+        newPlayer.current_room = newPlayer.current_room.e_to
     else:
         print('Please enter a valid direction: "n", "s", "w", "e", or "q" to quit.')
